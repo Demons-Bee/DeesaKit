@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF2A63BE1C4C7EBE002F4D0C /* UserPlugins.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF2A63BD1C4C7EBE002F4D0C /* UserPlugins.plist */; };
+		CF2A63C01C4C845A002F4D0C /* console_plugin.js in Resources */ = {isa = PBXBuildFile; fileRef = CF2A63BF1C4C845A002F4D0C /* console_plugin.js */; };
+		CF85CB9E1C46572700B52943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CB9D1C46572700B52943 /* AppDelegate.swift */; };
+		CF85CBA01C46572700B52943 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CB9F1C46572700B52943 /* ViewController.swift */; };
+		CF85CBA31C46572700B52943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF85CBA11C46572700B52943 /* Main.storyboard */; };
+		CF85CBA51C46572700B52943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF85CBA41C46572700B52943 /* Assets.xcassets */; };
+		CF85CBA81C46572700B52943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF85CBA61C46572700B52943 /* LaunchScreen.storyboard */; };
+		CF85CBC21C46596D00B52943 /* ConsolePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CBC11C46596D00B52943 /* ConsolePlugin.swift */; };
+		CF85CBC61C465F6C00B52943 /* AppPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CBC51C465F6C00B52943 /* AppPlugin.swift */; };
+		CF85CC881C479D8F00B52943 /* app_plugin.js in Resources */ = {isa = PBXBuildFile; fileRef = CF85CC871C479D8E00B52943 /* app_plugin.js */; };
+		CF85CC941C48F08800B52943 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = CF85CC931C48F08800B52943 /* test.html */; };
+		CFBD773C1C4DD6F1005BC1B0 /* Deesa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */; };
+		CFBD773D1C4DD6F1005BC1B0 /* Deesa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF85CBF41C474AA000B52943 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CFBD773D1C4DD6F1005BC1B0 /* Deesa.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CF2A63BD1C4C7EBE002F4D0C /* UserPlugins.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserPlugins.plist; sourceTree = "<group>"; };
+		CF2A63BF1C4C845A002F4D0C /* console_plugin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = console_plugin.js; sourceTree = "<group>"; };
+		CF85CB9A1C46572700B52943 /* DeesaExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeesaExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF85CB9D1C46572700B52943 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CF85CB9F1C46572700B52943 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CF85CBA21C46572700B52943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF85CBA41C46572700B52943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF85CBA71C46572700B52943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF85CBA91C46572700B52943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF85CBC11C46596D00B52943 /* ConsolePlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsolePlugin.swift; sourceTree = "<group>"; };
+		CF85CBC51C465F6C00B52943 /* AppPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPlugin.swift; sourceTree = "<group>"; };
+		CF85CC871C479D8E00B52943 /* app_plugin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app_plugin.js; sourceTree = "<group>"; };
+		CF85CC931C48F08800B52943 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Deesa.framework; path = "/Users/Dahan/Library/Developer/Xcode/DerivedData/DeesaExample-dyvfsshwhxvbyzgifftmttlrajcp/Build/Products/Debug-iphoneos/Deesa.framework"; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF85CB971C46572700B52943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFBD773C1C4DD6F1005BC1B0 /* Deesa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF85CB911C46572700B52943 = {
+			isa = PBXGroup;
+			children = (
+				CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */,
+				CF85CB9C1C46572700B52943 /* DeesaExample */,
+				CF85CB9B1C46572700B52943 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF85CB9B1C46572700B52943 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF85CB9A1C46572700B52943 /* DeesaExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF85CB9C1C46572700B52943 /* DeesaExample */ = {
+			isa = PBXGroup;
+			children = (
+				CF85CC931C48F08800B52943 /* test.html */,
+				CF85CB9D1C46572700B52943 /* AppDelegate.swift */,
+				CF85CB9F1C46572700B52943 /* ViewController.swift */,
+				CF85CBA11C46572700B52943 /* Main.storyboard */,
+				CF85CBA41C46572700B52943 /* Assets.xcassets */,
+				CF85CBA61C46572700B52943 /* LaunchScreen.storyboard */,
+				CF85CBA91C46572700B52943 /* Info.plist */,
+				CF85CBC11C46596D00B52943 /* ConsolePlugin.swift */,
+				CF85CBC51C465F6C00B52943 /* AppPlugin.swift */,
+				CF85CC871C479D8E00B52943 /* app_plugin.js */,
+				CF2A63BF1C4C845A002F4D0C /* console_plugin.js */,
+				CF2A63BD1C4C7EBE002F4D0C /* UserPlugins.plist */,
+			);
+			path = DeesaExample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF85CB991C46572700B52943 /* DeesaExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF85CBAC1C46572700B52943 /* Build configuration list for PBXNativeTarget "DeesaExample" */;
+			buildPhases = (
+				CF85CB961C46572700B52943 /* Sources */,
+				CF85CB971C46572700B52943 /* Frameworks */,
+				CF85CB981C46572700B52943 /* Resources */,
+				CF85CBF41C474AA000B52943 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeesaExample;
+			productName = DeesaExample;
+			productReference = CF85CB9A1C46572700B52943 /* DeesaExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF85CB921C46572700B52943 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = AppHeader;
+				TargetAttributes = {
+					CF85CB991C46572700B52943 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = CF85CB951C46572700B52943 /* Build configuration list for PBXProject "DeesaExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF85CB911C46572700B52943;
+			productRefGroup = CF85CB9B1C46572700B52943 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF85CB991C46572700B52943 /* DeesaExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF85CB981C46572700B52943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF85CBA81C46572700B52943 /* LaunchScreen.storyboard in Resources */,
+				CF85CBA51C46572700B52943 /* Assets.xcassets in Resources */,
+				CF85CC941C48F08800B52943 /* test.html in Resources */,
+				CF85CC881C479D8F00B52943 /* app_plugin.js in Resources */,
+				CF2A63BE1C4C7EBE002F4D0C /* UserPlugins.plist in Resources */,
+				CF85CBA31C46572700B52943 /* Main.storyboard in Resources */,
+				CF2A63C01C4C845A002F4D0C /* console_plugin.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF85CB961C46572700B52943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF85CBA01C46572700B52943 /* ViewController.swift in Sources */,
+				CF85CBC21C46596D00B52943 /* ConsolePlugin.swift in Sources */,
+				CF85CB9E1C46572700B52943 /* AppDelegate.swift in Sources */,
+				CF85CBC61C465F6C00B52943 /* AppPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF85CBA11C46572700B52943 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF85CBA21C46572700B52943 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF85CBA61C46572700B52943 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF85CBA71C46572700B52943 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF85CBAA1C46572700B52943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF85CBAB1C46572700B52943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF85CBAD1C46572700B52943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = DeesaExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dahan.DeesaExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CF85CBAE1C46572700B52943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = DeesaExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Dahan.DeesaExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF85CB951C46572700B52943 /* Build configuration list for PBXProject "DeesaExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF85CBAA1C46572700B52943 /* Debug */,
+				CF85CBAB1C46572700B52943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF85CBAC1C46572700B52943 /* Build configuration list for PBXNativeTarget "DeesaExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF85CBAD1C46572700B52943 /* Debug */,
+				CF85CBAE1C46572700B52943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF85CB921C46572700B52943 /* Project object */;
+}
