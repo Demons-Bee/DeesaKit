@@ -12,13 +12,19 @@ import WebKit
 public let DeesaName = "Deesa"
 
 public class DeesaController: UIViewController, WKScriptMessageHandler {
+  /** share cookie in all WKWebView, singleton */
+  public static let pool = WKProcessPool()
   
   public var webView: WKWebView!
-  public var url: String!
+  var URL: NSURL?
   
   public convenience init(url: String) {
+    self.init(URL: NSURL(string: url))
+  }
+  
+  public convenience init(URL: NSURL?) {
     self.init(nibName: nil, bundle: nil)
-    self.url = url
+    self.URL = URL
   }
   
   public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -32,8 +38,11 @@ public class DeesaController: UIViewController, WKScriptMessageHandler {
   public override func loadView() {
     super.loadView()
     let config = WKWebViewConfiguration()
+    config.processPool = DeesaController.pool
     config.userContentController.addScriptMessageHandler(self, name: DeesaName)
     webView = WKWebView(frame: self.view.bounds, configuration: config)
+    webView.navigationDelegate = self
+    webView.UIDelegate = self
     view = webView
   }
   
@@ -45,16 +54,12 @@ public class DeesaController: UIViewController, WKScriptMessageHandler {
   }
   
   func startLoad() {
-    guard let theUrlStr = self.url else {
-      debugPrint("ERROR!! Please set self.url before viewDidAppear.")
-      return
-    }
-    guard let theURL = NSURL(string: theUrlStr) else {
+    guard let theURL = URL else {
       debugPrint("Invalidated URL!")
       return
     }
     webView.loadRequest(NSURLRequest(URL: theURL))
-    debugPrint("Finish load url: \(theUrlStr)")
+    debugPrint("Finish load url: \(theURL)")
   }
   
   func registerUserPlugins() {

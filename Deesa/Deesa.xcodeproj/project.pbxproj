@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF5B55561C50DE0F0075A8D2 /* DeesaController+UIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B55551C50DE0F0075A8D2 /* DeesaController+UIDelegate.swift */; };
+		CF5B55581C50E0940075A8D2 /* DeesaController+NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B55571C50E0940075A8D2 /* DeesaController+NavigationDelegate.swift */; };
 		CF85CB811C464A7200B52943 /* Deesa.h in Headers */ = {isa = PBXBuildFile; fileRef = CF85CB801C464A7200B52943 /* Deesa.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF85CB891C464AC300B52943 /* DeesaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CB881C464AC300B52943 /* DeesaController.swift */; };
 		CF85CB901C46526900B52943 /* DeesaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CB8F1C46526900B52943 /* DeesaPlugin.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF5B55551C50DE0F0075A8D2 /* DeesaController+UIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeesaController+UIDelegate.swift"; sourceTree = "<group>"; };
+		CF5B55571C50E0940075A8D2 /* DeesaController+NavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeesaController+NavigationDelegate.swift"; sourceTree = "<group>"; };
 		CF85CB7D1C464A7200B52943 /* Deesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Deesa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF85CB801C464A7200B52943 /* Deesa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deesa.h; sourceTree = "<group>"; };
 		CF85CB821C464A7200B52943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				CF85CB801C464A7200B52943 /* Deesa.h */,
 				CF85CB821C464A7200B52943 /* Info.plist */,
 				CF85CB881C464AC300B52943 /* DeesaController.swift */,
+				CF5B55551C50DE0F0075A8D2 /* DeesaController+UIDelegate.swift */,
+				CF5B55571C50E0940075A8D2 /* DeesaController+NavigationDelegate.swift */,
 				CF85CB8F1C46526900B52943 /* DeesaPlugin.swift */,
 				CF85CC8B1C48D52F00B52943 /* DeesaArguments.swift */,
 				CF85CC8D1C48DFCF00B52943 /* DeesaGloble.swift */,
@@ -150,6 +156,8 @@
 				CF85CC8C1C48D52F00B52943 /* DeesaArguments.swift in Sources */,
 				CF85CB901C46526900B52943 /* DeesaPlugin.swift in Sources */,
 				CF85CC8E1C48DFCF00B52943 /* DeesaGloble.swift in Sources */,
+				CF5B55561C50DE0F0075A8D2 /* DeesaController+UIDelegate.swift in Sources */,
+				CF5B55581C50E0940075A8D2 /* DeesaController+NavigationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
