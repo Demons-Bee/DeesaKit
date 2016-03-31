@@ -39,7 +39,7 @@ public class DeesaPlugin: NSObject {
   
   //MARK:/*----------------------------------<excute javascript>---------------------------------------*/
   
-  func excuteJS(js: String, funcName: String = __FUNCTION__) {
+  func excuteJS(js: String, funcName: String = #function) {
     webView.evaluateJavaScript(js, completionHandler: { (obj: AnyObject?, error: NSError?) -> Void in
       if let e = error {
         debugPrint("\(funcName)--> error:\(e.debugDescription)")
