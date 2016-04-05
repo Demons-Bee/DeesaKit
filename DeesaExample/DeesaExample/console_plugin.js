@@ -1,5 +1,5 @@
 console = {
-  log:function(string){
-    window.webkit.messageHandlers.Deesa.postMessage({className: 'ConsolePlugin', funcName: 'log', data:string});
+  log: function(info){
+    DeesaExec(function(s){}, function(e){}, 'ConsolePlugin', 'log', info);
   }
 }

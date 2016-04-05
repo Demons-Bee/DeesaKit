@@ -16,7 +16,7 @@ public enum PluginResultStatus {
 public class DeesaPlugin: NSObject {
   
   public var controller: DeesaController!
-  public var webView: WKWebView!
+  public var webView: UIView!
   public var callbackId: Int!
   
   public required override init() {}
@@ -40,11 +40,15 @@ public class DeesaPlugin: NSObject {
   //MARK:/*----------------------------------<excute javascript>---------------------------------------*/
   
   func excuteJS(js: String, funcName: String = #function) {
-    webView.evaluateJavaScript(js, completionHandler: { (obj: AnyObject?, error: NSError?) -> Void in
-      if let e = error {
-        debugPrint("\(funcName)--> error:\(e.debugDescription)")
-      }
-    })
+    if webView is UIWebView {
+      (webView as! UIWebView).stringByEvaluatingJavaScriptFromString(js)
+    } else if webView is WKWebView {
+      (webView as! WKWebView).evaluateJavaScript(js, completionHandler: { (obj: AnyObject?, error: NSError?) -> Void in
+        if let e = error {
+          debugPrint("\(funcName)--> error:\(e.debugDescription)")
+        }
+      })
+    }
   }
   
 }

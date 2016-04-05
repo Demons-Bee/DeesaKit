@@ -20,3 +20,18 @@ DeesaOnSuccessCallback = function(i, j) {
 DeesaOnErrorCallback = function (i, j) {
   DeesaQueue[i].errorCallback(j);
 };
+
+DeesaExec = function (onSuccess, onError, service, action, args) {
+  var taskId = null;
+  if (onSuccess || onError) {
+    DeesaQueue.push(DeesaTask.init(DeesaQueue.length, onSuccess, onError));
+    taskId = DeesaQueue.length-1
+  } else {
+    taskId = 'INVALID';
+  }
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.Deesa && window.webkit.messageHandlers.Deesa.postMessage) {
+    window.webkit.messageHandlers.Deesa.postMessage({className: service, funcName: action, data: args, taskId: DeesaQueue.length-1});
+  } else if (Deesa && Deesa.postMessage) {
+    Deesa.postMessage({className: service, funcName: action, data:args, taskId: taskId});
+  }
+};

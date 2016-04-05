@@ -8,7 +8,7 @@
 
 import WebKit
 
-extension DeesaController: WKNavigationDelegate {
+extension DeesaWKController: WKNavigationDelegate {
   
   public func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
     decisionHandler(.Allow)
@@ -27,7 +27,7 @@ extension DeesaController: WKNavigationDelegate {
   }
 
   public func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
-    
+    debugPrint(error.debugDescription)
   }
 
   public func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
@@ -35,7 +35,9 @@ extension DeesaController: WKNavigationDelegate {
   }
 
   public func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-    
+    if let theURL = URL where !webView.loading {
+      debugPrint("Finish load url: \(theURL)")
+    }
   }
 
   public func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {

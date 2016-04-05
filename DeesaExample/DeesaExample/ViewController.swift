@@ -6,16 +6,37 @@
 //  Copyright © 2016 AppHeader. All rights reserved.
 //
 
-import WebKit
 import Deesa
 
-class ViewController: DeesaController {
+class ViewController: UIViewController {
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-//    url = "http://192.168.1.21:8020/html5app/pages/main.html"
-    let request = NSURLRequest(URL: NSBundle.mainBundle().URLForResource("test", withExtension: "html")!)
-    webView.loadRequest(request)
+  @IBOutlet weak var segment: UISegmentedControl!
+  var wkController: DeesaWKController!
+  var uiController: DeesaUIController!
+
+  @IBAction func segmentSwitchAction(sender: UISegmentedControl) {
+    if sender.selectedSegmentIndex == 0 {
+      if uiController == nil {
+        uiController = DeesaUIController(URL: NSBundle.mainBundle().URLForResource("test", withExtension: "html"))
+        uiController.view.frame = CGRect(x: 0, y: 64, width: CGRectGetWidth(view.bounds), height: CGRectGetHeight(view.bounds)-64)
+        view.addSubview(uiController.view)
+        addChildViewController(uiController)
+        uiController.didMoveToParentViewController(self)
+        
+        wkController?.removeFromParentViewController()
+        wkController = nil
+      }
+    } else {
+      if wkController == nil {
+        wkController = DeesaWKController(URL: NSBundle.mainBundle().URLForResource("test", withExtension: "html"))
+        wkController.view.frame = CGRect(x: 0, y: 64, width: CGRectGetWidth(view.bounds), height: CGRectGetHeight(view.bounds)-64)
+        view.addSubview(wkController.view)
+        addChildViewController(wkController)
+        wkController.didMoveToParentViewController(self)
+        
+        uiController?.removeFromParentViewController()
+        uiController = nil
+      }
+    }
   }
-
 }

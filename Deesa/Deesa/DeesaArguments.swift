@@ -8,8 +8,8 @@
 
 import UIKit
 
-public typealias DIC = Dictionary<NSObject,AnyObject>
-public typealias ARR = Array<AnyObject>
+public typealias DeesaDic = Dictionary<NSObject,AnyObject>
+public typealias DeesaArr = Array<AnyObject>
 
 public class DeesaArguments: NSObject {
 
@@ -22,21 +22,21 @@ public class DeesaArguments: NSObject {
     return data.description
   }
   
-  public var dictionaryValue: DIC? {
-    if let res = data as? DIC {
+  public var dictionaryValue: DeesaDic? {
+    if let res = data as? DeesaDic {
       return res
     }
-    if let res = parse(data) as? DIC {
+    if let res = parse(data) as? DeesaDic {
       return res
     }
     return nil
   }
   
-  public var arrayValue: ARR? {
-    if let res = data as? ARR {
+  public var arrayValue: DeesaArr? {
+    if let res = data as? DeesaArr {
       return res
     }
-    if let res = parse(data) as? ARR {
+    if let res = parse(data) as? DeesaArr {
       return res
     }
     return nil

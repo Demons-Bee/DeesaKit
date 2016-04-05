@@ -1,13 +1,14 @@
 App = {
-  testCallback:function(onSuccess,onError){
-    DeesaQueue.push(DeesaTask.init(DeesaQueue.length, onSuccess, onError));
-    window.webkit.messageHandlers.Deesa.postMessage({className: 'AppPlugin', funcName: 'testCallback', taskId:DeesaQueue.length-1});
+  testCallback: function(successCallback, errorCallback){
+    DeesaExec(successCallback, errorCallback, 'AppPlugin', 'testCallback', {});
   },
-  alert:function(args){
-    window.webkit.messageHandlers.Deesa.postMessage({className:'AppPlugin',funcName:'alert',data:args});
+  
+  alert: function(args){
+    DeesaExec(function(s){}, function(e){}, 'AppPlugin', 'alert', args);
   },
-  testCommand:function(onSuccess, onError, args){
-    DeesaQueue.push(DeesaTask.init(DeesaQueue.length, onSuccess, onError));
-    window.webkit.messageHandlers.Deesa.postMessage({className:'AppPlugin',funcName:'testCommand',data:args,taskId:DeesaQueue.length-1});
+  
+  testCommand: function(successCallback, errorCallback, args){
+    DeesaExec(successCallback, errorCallback, 'AppPlugin', 'testCommand', args);
   }
+  
 }

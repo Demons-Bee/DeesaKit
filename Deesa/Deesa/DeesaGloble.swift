@@ -7,14 +7,15 @@
 //
 
 import Foundation
+import WebKit
+import JavaScriptCore
 
 func parse(json: AnyObject?) -> AnyObject? {
-  guard let jsonData = (json as? String)?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) else {
-    debugPrint("invalidated json format")
+  guard let string = json as? String else { return nil }
+  guard let jsonData = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) else {
     return nil
   }
   guard let result = try? NSJSONSerialization.JSONObjectWithData(jsonData, options: []) else {
-    debugPrint("invalidated json format")
     return nil
   }
   return result
@@ -32,4 +33,32 @@ func toJSON(values: AnyObject?) -> String? {
     return nil
   }
   return nil
+}
+
+func registerUserPluginsForWebView(web: UIView, context: JSContext? = nil, bundle: NSBundle = NSBundle.mainBundle()) {
+  guard let pluginsFile = NSBundle.mainBundle().URLForResource("UserPlugins", withExtension: "plist") else {
+    debugPrint("UserPlugins.plist must be add to your main bundle! If you have any questions, please check out the demo project")
+    return
+  }
+  guard let pluginsNames = NSArray(contentsOfURL: pluginsFile) else { return }
+  for name in pluginsNames as! [String] {
+    injectJS(name, forWebView: web, context: context, bundle: bundle)
+  }
+}
+
+func injectJS(fileName: String, forWebView web: UIView, context: JSContext? = nil, bundle: NSBundle = NSBundle.mainBundle()) {
+  guard let path = bundle.pathForResource(fileName, ofType: "js") else {
+    debugPrint("Not found \(fileName).js file!")
+    return
+  }
+  do {
+    let js = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+    if web is WKWebView {
+      (web as! WKWebView).evaluateJavaScript(js as String, completionHandler: nil)
+    } else if web is UIWebView {
+      context?.evaluateScript(js as String)
+    }
+  } catch let error as NSError {
+    debugPrint(error.debugDescription)
+  }
 }

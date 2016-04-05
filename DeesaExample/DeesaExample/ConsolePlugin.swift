@@ -9,11 +9,22 @@
 import Deesa
 
 class ConsolePlugin: DeesaPlugin {
+  
   func log(args: DeesaArguments) {
-    print("args.dictionaryValue:  \(args.dictionaryValue)")
-    print("args.arrayValue:       \(args.arrayValue)")
-    print("args.stringValue:      \(args.stringValue)")
-    print("args.numberValue:      \(args.numberValue)")
-    print("--------------------------")
+    print("______Deesa log begin______\n")
+    if let dic = args.dictionaryValue {
+      print(dic)
+    }
+    if let array = args.arrayValue {
+      print(array)
+    }
+    if let string = args.stringValue {
+      print(string)
+    }
+    if let number = args.numberValue {
+      print(number)
+    }
+    print("\n______Deesa log ended______")
   }
+  
 }

@@ -8,7 +8,7 @@
 
 import WebKit
 
-extension DeesaController: WKUIDelegate {
+extension DeesaWKController: WKUIDelegate {
   
   public func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
     // target="_blank"
