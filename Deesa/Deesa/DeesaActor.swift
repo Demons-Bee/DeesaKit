@@ -31,7 +31,7 @@ class DeesaActor: NSObject {
     if obj.respondsToSelector(funcSelector) {
       obj.controller = self.controller
       obj.webView = self.webView
-      obj.callbackId = dic["taskId"]?.integerValue
+      obj.callbackId = dic["callbackId"]?.integerValue
       obj.performSelector(funcSelector, withObject: DeesaArguments(data: dic["data"]))
     } else {
       debugPrint("Not found `\(funcSelector)` in `\(className)` class")

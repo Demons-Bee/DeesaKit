@@ -1,9 +1,9 @@
 //
-//  Console.swift
-//  BlackHawk
+//  HostApp.swift
+//  DeesaExample
 //
-//  Created by leqicheng on 15/8/28.
-//  Copyright © 2015年 乐其橙科技（北京）有限公司. All rights reserved.
+//  Created by Dahan Hu on 1/13/16.
+//  Copyright © 2016 AppHeader. All rights reserved.
 //
 
 import Deesa
@@ -25,6 +25,8 @@ class ConsolePlugin: DeesaPlugin {
       print(number)
     }
     print("\n______Deesa log ended______")
+    print(args.argumentAtIndex(0))
+    print(args.argumentForKey("deviceInfo"))
   }
   
 }

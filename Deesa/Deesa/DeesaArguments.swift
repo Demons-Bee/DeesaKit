@@ -61,4 +61,15 @@ public class DeesaArguments: NSObject {
     self.data = data
   }
   
+  public func argumentAtIndex(idx: Int) -> AnyObject? {
+    guard let arr = arrayValue else { return nil }
+    guard !arr.isEmpty && idx < arr.count else { return nil }
+    return arr[idx]
+  }
+  
+  public func argumentForKey(key: String) -> AnyObject? {
+    guard let dict = dictionaryValue else { return nil }
+    return dict[key]
+  }
+  
 }

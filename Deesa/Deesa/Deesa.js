@@ -1,5 +1,5 @@
-// 任务队列数组
-DeesaQueue = [];
+// 任务队列
+DeesaCallbacks = {};
 // 任务对象
 DeesaTask = {
   id: 0,
@@ -13,25 +13,27 @@ DeesaTask = {
   }
 };
 // 成功回调
-DeesaOnSuccessCallback = function(i, j) {
-  DeesaQueue[i].successCallback(JSON.parse(j));
+DeesaOnSuccessCallback = function(callbackId, callbackData) {
+  DeesaCallbacks[callbackId].successCallback(JSON.parse(callbackData));
+  delete DeesaCallbacks[callbackId];
 };
 // 错误回调
-DeesaOnErrorCallback = function (i, j) {
-  DeesaQueue[i].errorCallback(j);
+DeesaOnErrorCallback = function (callbackId, callbackData) {
+  DeesaCallbacks[callbackId].errorCallback(callbackData);
+  delete DeesaCallbacks[callbackId];
 };
 
 DeesaExec = function (onSuccess, onError, service, action, args) {
-  var taskId = null;
+  var callbackId = null;
   if (onSuccess || onError) {
-    DeesaQueue.push(DeesaTask.init(DeesaQueue.length, onSuccess, onError));
-    taskId = DeesaQueue.length-1
+    callbackId = Math.floor(Math.random() * 2000000000)
+    DeesaCallbacks[callbackId] = (DeesaTask.init(callbackId, onSuccess, onError));
   } else {
-    taskId = 'INVALID';
+    callbackId = 'INVALID';
   }
   if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.Deesa && window.webkit.messageHandlers.Deesa.postMessage) {
-    window.webkit.messageHandlers.Deesa.postMessage({className: service, funcName: action, data: args, taskId: DeesaQueue.length-1});
+    window.webkit.messageHandlers.Deesa.postMessage({className: service, funcName: action, data: args, callbackId: callbackId});
   } else if (Deesa && Deesa.postMessage) {
-    Deesa.postMessage({className: service, funcName: action, data:args, taskId: taskId});
+    Deesa.postMessage({className: service, funcName: action, data:args, callbackId: callbackId});
   }
 };
