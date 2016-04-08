@@ -34,18 +34,23 @@ public class DeesaPlugin: NSObject {
     } else if let des = values.description {
       args = des
     }
-    excuteJS("\(method)(\(callbackId), '\(args)')")
+    // execute javascript on main thread
+    if !NSThread.isMainThread() {
+      performSelectorOnMainThread(#selector(DeesaPlugin.executeJS(_:)), withObject: "\(method)(\(callbackId), '\(args)')", waitUntilDone: false)
+    } else {
+      executeJS("\(method)(\(callbackId), '\(args)')")
+    }
   }
   
   //MARK:/*----------------------------------<excute javascript>---------------------------------------*/
   
-  func excuteJS(js: String, funcName: String = #function) {
+  func executeJS(js: String) {
     if webView is UIWebView {
       (webView as! UIWebView).stringByEvaluatingJavaScriptFromString(js)
     } else if webView is WKWebView {
       (webView as! WKWebView).evaluateJavaScript(js, completionHandler: { (obj: AnyObject?, error: NSError?) -> Void in
         if let e = error {
-          debugPrint("\(funcName)--> error:\(e.debugDescription)")
+          debugPrint("execute js `\(js)`--> error:\(e.debugDescription)")
         }
       })
     }

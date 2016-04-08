@@ -13,6 +13,21 @@ public typealias DeesaArr = Array<AnyObject>
 
 public class DeesaArguments: NSObject {
 
+  public subscript(key: String) -> AnyObject? {
+    get {
+      guard let dict = dictionaryValue else { return nil }
+      return dict[key]
+    }
+  }
+  
+  public subscript(index: Int) -> AnyObject? {
+    get {
+      guard let arr = arrayValue else { return nil }
+      if index > arr.count { return nil }
+      return arr[index]
+    }
+  }
+  
   private var data: AnyObject?
   
   public override var description: String {
@@ -59,17 +74,6 @@ public class DeesaArguments: NSObject {
   convenience init(data: AnyObject?) {
     self.init()
     self.data = data
-  }
-  
-  public func argumentAtIndex(idx: Int) -> AnyObject? {
-    guard let arr = arrayValue else { return nil }
-    guard !arr.isEmpty && idx < arr.count else { return nil }
-    return arr[idx]
-  }
-  
-  public func argumentForKey(key: String) -> AnyObject? {
-    guard let dict = dictionaryValue else { return nil }
-    return dict[key]
   }
   
 }

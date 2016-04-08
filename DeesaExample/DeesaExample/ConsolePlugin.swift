@@ -24,9 +24,9 @@ class ConsolePlugin: DeesaPlugin {
     if let number = args.numberValue {
       print(number)
     }
+    print(args[0])
+    print(args["deviceInfo"])
     print("\n______Deesa log ended______")
-    print(args.argumentAtIndex(0))
-    print(args.argumentForKey("deviceInfo"))
   }
   
 }
