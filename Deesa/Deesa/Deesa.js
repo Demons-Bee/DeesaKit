@@ -14,12 +14,12 @@ DeesaTask = {
 };
 // 成功回调
 DeesaOnSuccessCallback = function(callbackId, callbackData) {
-  DeesaCallbacks[callbackId].successCallback(JSON.parse(callbackData));
+  DeesaCallbacks[callbackId].successCallback(JSON.parse(JSON.stringify(callbackData)));
   delete DeesaCallbacks[callbackId];
 };
 // 错误回调
 DeesaOnErrorCallback = function (callbackId, callbackData) {
-  DeesaCallbacks[callbackId].errorCallback(callbackData);
+  DeesaCallbacks[callbackId].errorCallback(JSON.parse(JSON.stringify(callbackData)));
   delete DeesaCallbacks[callbackId];
 };
 

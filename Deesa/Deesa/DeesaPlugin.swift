@@ -36,9 +36,9 @@ public class DeesaPlugin: NSObject {
     }
     // execute javascript on main thread
     if !NSThread.isMainThread() {
-      performSelectorOnMainThread(#selector(DeesaPlugin.executeJS(_:)), withObject: "\(method)(\(callbackId), '\(args)')", waitUntilDone: false)
+      performSelectorOnMainThread(#selector(DeesaPlugin.executeJS(_:)), withObject: "\(method)(\(callbackId), \(args))", waitUntilDone: false)
     } else {
-      executeJS("\(method)(\(callbackId), '\(args)')")
+      executeJS("\(method)(\(callbackId), \(args))")
     }
   }
   
