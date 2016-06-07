@@ -12,8 +12,8 @@ public let DeesaName = "Deesa"
 
 public class DeesaController: UIViewController {
   
-  public var url: String!
-  public var URL: NSURL?
+  public private(set) var url: String!
+  public private(set) var URL: NSURL?
   
   public convenience init(url: String) {
     let theURL = NSURL(string: url)

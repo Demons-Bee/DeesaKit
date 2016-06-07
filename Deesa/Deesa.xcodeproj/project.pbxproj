@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF5B55561C50DE0F0075A8D2 /* DeesaWKController+UIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B55551C50DE0F0075A8D2 /* DeesaWKController+UIDelegate.swift */; };
-		CF5B55581C50E0940075A8D2 /* DeesaWKController+NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B55571C50E0940075A8D2 /* DeesaWKController+NavigationDelegate.swift */; };
 		CF85CB811C464A7200B52943 /* Deesa.h in Headers */ = {isa = PBXBuildFile; fileRef = CF85CB801C464A7200B52943 /* Deesa.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF85CB891C464AC300B52943 /* DeesaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CB881C464AC300B52943 /* DeesaController.swift */; };
-		CF85CB901C46526900B52943 /* DeesaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CB8F1C46526900B52943 /* DeesaPlugin.swift */; };
-		CF85CC831C47867C00B52943 /* Deesa.js in Resources */ = {isa = PBXBuildFile; fileRef = CF85CC821C47867C00B52943 /* Deesa.js */; };
-		CF85CC8C1C48D52F00B52943 /* DeesaArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CC8B1C48D52F00B52943 /* DeesaArguments.swift */; };
-		CF85CC8E1C48DFCF00B52943 /* DeesaGloble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CC8D1C48DFCF00B52943 /* DeesaGloble.swift */; };
-		CFDF655B1CB361F60027259C /* DeesaUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF655A1CB361F60027259C /* DeesaUIController.swift */; };
-		CFDF655D1CB362470027259C /* DeesaWKController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF655C1CB362470027259C /* DeesaWKController.swift */; };
-		CFDF655F1CB3654A0027259C /* DeesaMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF655E1CB3654A0027259C /* DeesaMessageHandler.swift */; };
-		CFDF65611CB367EC0027259C /* DeesaActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF65601CB367EC0027259C /* DeesaActor.swift */; };
+		CFFADA201CCE3F5400A84153 /* Deesa.js in Resources */ = {isa = PBXBuildFile; fileRef = CFFADA151CCE3F5400A84153 /* Deesa.js */; };
+		CFFADA211CCE3F5400A84153 /* DeesaActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA161CCE3F5400A84153 /* DeesaActor.swift */; };
+		CFFADA221CCE3F5400A84153 /* DeesaArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA171CCE3F5400A84153 /* DeesaArguments.swift */; };
+		CFFADA231CCE3F5400A84153 /* DeesaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA181CCE3F5400A84153 /* DeesaController.swift */; };
+		CFFADA241CCE3F5400A84153 /* DeesaGloble.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA191CCE3F5400A84153 /* DeesaGloble.swift */; };
+		CFFADA251CCE3F5400A84153 /* DeesaMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA1A1CCE3F5400A84153 /* DeesaMessageHandler.swift */; };
+		CFFADA261CCE3F5400A84153 /* DeesaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA1B1CCE3F5400A84153 /* DeesaPlugin.swift */; };
+		CFFADA271CCE3F5400A84153 /* DeesaUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA1C1CCE3F5400A84153 /* DeesaUIController.swift */; };
+		CFFADA281CCE3F5400A84153 /* DeesaWKController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA1D1CCE3F5400A84153 /* DeesaWKController.swift */; };
+		CFFADA291CCE3F5400A84153 /* DeesaWKController+NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA1E1CCE3F5400A84153 /* DeesaWKController+NavigationDelegate.swift */; };
+		CFFADA2A1CCE3F5400A84153 /* DeesaWKController+UIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA1F1CCE3F5400A84153 /* DeesaWKController+UIDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CF5B55551C50DE0F0075A8D2 /* DeesaWKController+UIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeesaWKController+UIDelegate.swift"; sourceTree = "<group>"; };
-		CF5B55571C50E0940075A8D2 /* DeesaWKController+NavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeesaWKController+NavigationDelegate.swift"; sourceTree = "<group>"; };
 		CF85CB7D1C464A7200B52943 /* Deesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Deesa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF85CB801C464A7200B52943 /* Deesa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deesa.h; sourceTree = "<group>"; };
 		CF85CB821C464A7200B52943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF85CB881C464AC300B52943 /* DeesaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaController.swift; sourceTree = "<group>"; };
-		CF85CB8F1C46526900B52943 /* DeesaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaPlugin.swift; sourceTree = "<group>"; };
-		CF85CC821C47867C00B52943 /* Deesa.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Deesa.js; sourceTree = "<group>"; };
-		CF85CC8B1C48D52F00B52943 /* DeesaArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaArguments.swift; sourceTree = "<group>"; };
-		CF85CC8D1C48DFCF00B52943 /* DeesaGloble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaGloble.swift; sourceTree = "<group>"; };
-		CFDF655A1CB361F60027259C /* DeesaUIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaUIController.swift; sourceTree = "<group>"; };
-		CFDF655C1CB362470027259C /* DeesaWKController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaWKController.swift; sourceTree = "<group>"; };
-		CFDF655E1CB3654A0027259C /* DeesaMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaMessageHandler.swift; sourceTree = "<group>"; };
-		CFDF65601CB367EC0027259C /* DeesaActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaActor.swift; sourceTree = "<group>"; };
+		CFFADA151CCE3F5400A84153 /* Deesa.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Deesa.js; sourceTree = "<group>"; };
+		CFFADA161CCE3F5400A84153 /* DeesaActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaActor.swift; sourceTree = "<group>"; };
+		CFFADA171CCE3F5400A84153 /* DeesaArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaArguments.swift; sourceTree = "<group>"; };
+		CFFADA181CCE3F5400A84153 /* DeesaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaController.swift; sourceTree = "<group>"; };
+		CFFADA191CCE3F5400A84153 /* DeesaGloble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaGloble.swift; sourceTree = "<group>"; };
+		CFFADA1A1CCE3F5400A84153 /* DeesaMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaMessageHandler.swift; sourceTree = "<group>"; };
+		CFFADA1B1CCE3F5400A84153 /* DeesaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaPlugin.swift; sourceTree = "<group>"; };
+		CFFADA1C1CCE3F5400A84153 /* DeesaUIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaUIController.swift; sourceTree = "<group>"; };
+		CFFADA1D1CCE3F5400A84153 /* DeesaWKController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaWKController.swift; sourceTree = "<group>"; };
+		CFFADA1E1CCE3F5400A84153 /* DeesaWKController+NavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeesaWKController+NavigationDelegate.swift"; sourceTree = "<group>"; };
+		CFFADA1F1CCE3F5400A84153 /* DeesaWKController+UIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeesaWKController+UIDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,19 +68,19 @@
 		CF85CB7F1C464A7200B52943 /* Deesa */ = {
 			isa = PBXGroup;
 			children = (
-				CF85CC821C47867C00B52943 /* Deesa.js */,
+				CFFADA151CCE3F5400A84153 /* Deesa.js */,
+				CFFADA161CCE3F5400A84153 /* DeesaActor.swift */,
+				CFFADA171CCE3F5400A84153 /* DeesaArguments.swift */,
+				CFFADA181CCE3F5400A84153 /* DeesaController.swift */,
+				CFFADA191CCE3F5400A84153 /* DeesaGloble.swift */,
+				CFFADA1A1CCE3F5400A84153 /* DeesaMessageHandler.swift */,
+				CFFADA1B1CCE3F5400A84153 /* DeesaPlugin.swift */,
+				CFFADA1C1CCE3F5400A84153 /* DeesaUIController.swift */,
+				CFFADA1D1CCE3F5400A84153 /* DeesaWKController.swift */,
+				CFFADA1E1CCE3F5400A84153 /* DeesaWKController+NavigationDelegate.swift */,
+				CFFADA1F1CCE3F5400A84153 /* DeesaWKController+UIDelegate.swift */,
 				CF85CB801C464A7200B52943 /* Deesa.h */,
 				CF85CB821C464A7200B52943 /* Info.plist */,
-				CF85CB8F1C46526900B52943 /* DeesaPlugin.swift */,
-				CF85CC8B1C48D52F00B52943 /* DeesaArguments.swift */,
-				CF85CC8D1C48DFCF00B52943 /* DeesaGloble.swift */,
-				CFDF65601CB367EC0027259C /* DeesaActor.swift */,
-				CFDF655E1CB3654A0027259C /* DeesaMessageHandler.swift */,
-				CF85CB881C464AC300B52943 /* DeesaController.swift */,
-				CFDF655A1CB361F60027259C /* DeesaUIController.swift */,
-				CFDF655C1CB362470027259C /* DeesaWKController.swift */,
-				CF5B55551C50DE0F0075A8D2 /* DeesaWKController+UIDelegate.swift */,
-				CF5B55571C50E0940075A8D2 /* DeesaWKController+NavigationDelegate.swift */,
 			);
 			path = Deesa;
 			sourceTree = "<group>";
@@ -123,6 +123,7 @@
 		CF85CB741C464A7200B52943 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = AppHeader;
 				TargetAttributes = {
@@ -153,7 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF85CC831C47867C00B52943 /* Deesa.js in Resources */,
+				CFFADA201CCE3F5400A84153 /* Deesa.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,16 +165,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF85CB891C464AC300B52943 /* DeesaController.swift in Sources */,
-				CF85CC8C1C48D52F00B52943 /* DeesaArguments.swift in Sources */,
-				CF85CB901C46526900B52943 /* DeesaPlugin.swift in Sources */,
-				CF85CC8E1C48DFCF00B52943 /* DeesaGloble.swift in Sources */,
-				CF5B55561C50DE0F0075A8D2 /* DeesaWKController+UIDelegate.swift in Sources */,
-				CFDF655D1CB362470027259C /* DeesaWKController.swift in Sources */,
-				CFDF655F1CB3654A0027259C /* DeesaMessageHandler.swift in Sources */,
-				CFDF65611CB367EC0027259C /* DeesaActor.swift in Sources */,
-				CFDF655B1CB361F60027259C /* DeesaUIController.swift in Sources */,
-				CF5B55581C50E0940075A8D2 /* DeesaWKController+NavigationDelegate.swift in Sources */,
+				CFFADA211CCE3F5400A84153 /* DeesaActor.swift in Sources */,
+				CFFADA261CCE3F5400A84153 /* DeesaPlugin.swift in Sources */,
+				CFFADA281CCE3F5400A84153 /* DeesaWKController.swift in Sources */,
+				CFFADA221CCE3F5400A84153 /* DeesaArguments.swift in Sources */,
+				CFFADA251CCE3F5400A84153 /* DeesaMessageHandler.swift in Sources */,
+				CFFADA231CCE3F5400A84153 /* DeesaController.swift in Sources */,
+				CFFADA291CCE3F5400A84153 /* DeesaWKController+NavigationDelegate.swift in Sources */,
+				CFFADA271CCE3F5400A84153 /* DeesaUIController.swift in Sources */,
+				CFFADA241CCE3F5400A84153 /* DeesaGloble.swift in Sources */,
+				CFFADA2A1CCE3F5400A84153 /* DeesaWKController+UIDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
