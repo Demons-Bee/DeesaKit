@@ -39,7 +39,6 @@ public class DeesaWKController: DeesaController, WKScriptMessageHandler {
   
   /** override this method must call super */
   public func configForWebView(webView: WKWebView) {
-    webView.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     webView.scrollView.delaysContentTouches = false
     webView.navigationDelegate = self
     webView.UIDelegate = self

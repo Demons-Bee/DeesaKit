@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <title>DeesaExample</title>
-        <script>
-          function test(){
-            App.testCallback(function success(res) {
-                                 App.alert(res);
-                                 },function error(e) {
-                                 App.alert(e);
-                                 });
-          };
-        function test2() {
-          App.testCommand(function suc(res){
-                              App.alert(res);
-                              },function err(e){
-                              App.alert(e);
-                              }, "啊啊啊啊啊啊");
-        };
-        device = {
-          deviceId: "Im deviceId",
-          deviceName: "My name is device",
-          deviceInfo: "This is deviceInfo of this device!"
-        }
-        </script>
-  </head>
-  <body>
-    <h1>DeesaExample</h1>
-    <h3>参数传递</h3>
-    <button onclick="App.alert(device);">js对象</button>
-    <button onclick="App.alert(JSON.stringify({key1:'value1',key2:'value2'}));">JSON键值对对象字符串</button>
-    <button onclick="App.alert(JSON.stringify(['value1',{key2:'value2'},900]));">JSON数组字符串对象</button>
-    <button onclick="App.alert(1231223242344);">number</button>
-    <button onclick="App.alert('阿拉山口就发卡萨交电话费微乳液和快接啊是打发高');">字符串</button>
-    <button onclick="App.alert(['字符串',123888]);">数组</button>
-    <h3>插件调用</h3>
-    <button onclick="App.alert('我是确认框');">测试alert</button>
-    <h3>原生回调</h3>
-    <button onclick="test()">测试callback1</button>
-    <button onclick="test2()">测试callback2</button>
-    <h3>日志打印</h3>
-    <button onclick="console.log('你好啊？');">打印字符串</button>
-    <button onclick="console.log(['元素1',2,3.2,'元素4']);">打印数组</button>
-    <button onclick="console.log(device);">打印对象</button>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <title>DeesaExample</title>
+  <script>
+  function test(){
+    App.testCallback(function success(res) {
+      App.alert(res);
+    },function error(e) {
+      App.alert(e);
+    });
+    // App.testCallback(function success(res) {
+    //   console.log("111");
+    // },function error(e) {
+    //   App.alert(e);
+    // });
+    // App.testCallback(function success(res) {
+    //   console.log("222");
+    // },function error(e) {
+    //   App.alert(e);
+    // });
+  };
+  function test2() {
+    App.testCommand(function suc(res){
+      App.alert(res);
+    },function err(e){
+      App.alert(e);
+    }, "啊啊啊啊啊啊");
+  };
+  device = {
+    deviceId: "Im deviceId",
+    deviceName: "My name is device",
+    deviceInfo: "This is deviceInfo of this device!"
+  }
+  </script>
+</head>
+<body>
+  <h1>DeesaExample</h1>
+  <h3>参数传递</h3>
+  <button onclick="App.alert(device);">js对象</button>
+  <button onclick="App.alert(JSON.stringify({key1:'value1',key2:'value2'}));">JSON键值对对象字符串</button>
+  <button onclick="App.alert(JSON.stringify(['value1',{key2:'value2'},900]));">JSON数组字符串对象</button>
+  <button onclick="App.alert(1231223242344);">number</button>
+  <button onclick="App.alert('阿拉山口就发卡萨交电话费微乳液和快接啊是打发高');">字符串</button>
+  <button onclick="App.alert(['字符串',123888]);">数组</button>
+  <h3>插件调用</h3>
+  <button onclick="App.alert('我是确认框');">测试alert</button>
+  <h3>原生回调</h3>
+  <button onclick="test()">测试callback1</button>
+  <button onclick="test2()">测试callback2</button>
+  <h3>日志打印</h3>
+  <button onclick="console.log('你好啊？');">打印字符串</button>
+  <button onclick="console.log(['元素1',2,3.2,'元素4']);">打印数组</button>
+  <button onclick="console.log(device);">打印对象</button>
+</body>
 </html>

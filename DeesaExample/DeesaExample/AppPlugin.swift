@@ -22,7 +22,7 @@ class AppPlugin: DeesaPlugin {
   }
   
   func testCommand(args: DeesaArguments) {
-    sendPluginResultWithValues("错误回调", status: PluginResultStatus.Error)
+    sendPluginResultWithValues("错误回调,传入的参数为 `\(args.description)`", status: PluginResultStatus.Error)
   }
   
 }

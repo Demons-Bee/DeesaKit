@@ -27,7 +27,6 @@ public class DeesaUIController: DeesaController, UIWebViewDelegate {
   
   /** override this method must call super */
   public func configForWebView(webView: UIWebView) {
-    webView.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     webView.scrollView.delaysContentTouches = false
     webView.delegate = self
   }

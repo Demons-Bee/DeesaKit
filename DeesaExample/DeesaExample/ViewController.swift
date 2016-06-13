@@ -18,8 +18,9 @@ class ViewController: UIViewController {
     if sender.selectedSegmentIndex == 0 {
       if uiController == nil {
         uiController = DeesaUIController(URL: NSBundle.mainBundle().URLForResource("test", withExtension: "html"))
-        uiController.view.frame = CGRect(x: 0, y: 64, width: CGRectGetWidth(view.bounds), height: CGRectGetHeight(view.bounds)-64)
         view.addSubview(uiController.view)
+        uiController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints(["H:|-0-[ui]-0-|","V:|-64-[ui]-0-|"].flatMap{NSLayoutConstraint.constraintsWithVisualFormat($0, options: [], metrics: nil, views: ["ui":self.uiController.view])})
         addChildViewController(uiController)
         uiController.didMoveToParentViewController(self)
         
@@ -29,8 +30,9 @@ class ViewController: UIViewController {
     } else {
       if wkController == nil {
         wkController = DeesaWKController(URL: NSBundle.mainBundle().URLForResource("test", withExtension: "html"))
-        wkController.view.frame = CGRect(x: 0, y: 64, width: CGRectGetWidth(view.bounds), height: CGRectGetHeight(view.bounds)-64)
         view.addSubview(wkController.view)
+        wkController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints(["H:|-0-[wk]-0-|","V:|-64-[wk]-0-|"].flatMap{NSLayoutConstraint.constraintsWithVisualFormat($0, options: [], metrics: nil, views: ["wk":self.wkController.view])})
         addChildViewController(wkController)
         wkController.didMoveToParentViewController(self)
         
@@ -39,4 +41,12 @@ class ViewController: UIViewController {
       }
     }
   }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    automaticallyAdjustsScrollViewInsets = false
+    segment.selectedSegmentIndex = 0
+    segmentSwitchAction(segment)
+  }
+
 }

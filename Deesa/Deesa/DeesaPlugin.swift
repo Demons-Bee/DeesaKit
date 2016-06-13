@@ -19,6 +19,8 @@ public class DeesaPlugin: NSObject {
   public var webView: UIView!
   public var callbackId: Int!
   
+  private let serialQueue = dispatch_queue_create("PluginSerialQueue", DISPATCH_QUEUE_SERIAL)
+  
   public required override init() {}
   
   public func sendPluginResultWithValues(values: AnyObject, status: PluginResultStatus) {
@@ -28,12 +30,13 @@ public class DeesaPlugin: NSObject {
       method = "DeesaOnErrorCallback"
     }
     if values is String {
-      args = values as! String
+      args = "'\(values as! String)'"
     } else if let json = toJSON(values) {
       args = json
     } else if let des = values.description {
-      args = des
+      args = "'\(des)'"
     }
+    
     // execute javascript on main thread
     if !NSThread.isMainThread() {
       performSelectorOnMainThread(#selector(DeesaPlugin.executeJS(_:)), withObject: "\(method)(\(callbackId), \(args))", waitUntilDone: false)
