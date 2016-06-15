@@ -18,9 +18,7 @@ public class DeesaPlugin: NSObject {
   public var controller: DeesaController!
   public var webView: UIView!
   public var callbackId: Int!
-  
-  private let serialQueue = dispatch_queue_create("PluginSerialQueue", DISPATCH_QUEUE_SERIAL)
-  
+    
   public required override init() {}
   
   public func sendPluginResultWithValues(values: AnyObject, status: PluginResultStatus) {

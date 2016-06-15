@@ -6,21 +6,21 @@
   <title>DeesaExample</title>
   <script>
   function test(){
-    App.testCallback(function success(res) {
-      App.alert(res);
-    },function error(e) {
+    App.testCallback(function (res) {
+      console.log("000");
+    },function (e) {
       App.alert(e);
     });
-    // App.testCallback(function success(res) {
-    //   console.log("111");
-    // },function error(e) {
-    //   App.alert(e);
-    // });
-    // App.testCallback(function success(res) {
-    //   console.log("222");
-    // },function error(e) {
-    //   App.alert(e);
-    // });
+    App.testCallback(function (res) {
+      console.log("111");
+    },function (e) {
+      App.alert(e);
+    });
+    App.testCallback(function (res) {
+      console.log("222");
+    },function (e) {
+      App.alert(e);
+    });
   };
   function test2() {
     App.testCommand(function suc(res){
