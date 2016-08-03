@@ -34,6 +34,13 @@
     deviceName: "My name is device",
     deviceInfo: "This is deviceInfo of this device!"
   }
+  
+  nested = {
+    key: [111,'222'],
+    key1: {aaa:'AAA',bbb:['ccc','ddd']}
+  }
+  
+  nestedJSON = JSON.stringify(nested);
   </script>
 </head>
 <body>
@@ -54,5 +61,6 @@
   <button onclick="console.log('你好啊？');">打印字符串</button>
   <button onclick="console.log(['元素1',2,3.2,'元素4']);">打印数组</button>
   <button onclick="console.log(device);">打印对象</button>
+  <button onclick="console.log(nested);">打印嵌套对象json字符串</button>
 </body>
 </html>

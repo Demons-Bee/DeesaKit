@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF85CB811C464A7200B52943 /* Deesa.h in Headers */ = {isa = PBXBuildFile; fileRef = CF85CB801C464A7200B52943 /* Deesa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF9BBF531D1A38B800D64C00 /* strip-frameworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = CF9BBF521D1A38B800D64C00 /* strip-frameworks.sh */; };
 		CFFADA201CCE3F5400A84153 /* Deesa.js in Resources */ = {isa = PBXBuildFile; fileRef = CFFADA151CCE3F5400A84153 /* Deesa.js */; };
 		CFFADA211CCE3F5400A84153 /* DeesaActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA161CCE3F5400A84153 /* DeesaActor.swift */; };
 		CFFADA221CCE3F5400A84153 /* DeesaArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFADA171CCE3F5400A84153 /* DeesaArguments.swift */; };
@@ -25,6 +26,7 @@
 		CF85CB7D1C464A7200B52943 /* Deesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Deesa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF85CB801C464A7200B52943 /* Deesa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deesa.h; sourceTree = "<group>"; };
 		CF85CB821C464A7200B52943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9BBF521D1A38B800D64C00 /* strip-frameworks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "strip-frameworks.sh"; sourceTree = "<group>"; };
 		CFFADA151CCE3F5400A84153 /* Deesa.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Deesa.js; sourceTree = "<group>"; };
 		CFFADA161CCE3F5400A84153 /* DeesaActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaActor.swift; sourceTree = "<group>"; };
 		CFFADA171CCE3F5400A84153 /* DeesaArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeesaArguments.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		CF85CB7F1C464A7200B52943 /* Deesa */ = {
 			isa = PBXGroup;
 			children = (
+				CF9BBF521D1A38B800D64C00 /* strip-frameworks.sh */,
 				CFFADA151CCE3F5400A84153 /* Deesa.js */,
 				CFFADA161CCE3F5400A84153 /* DeesaActor.swift */,
 				CFFADA171CCE3F5400A84153 /* DeesaArguments.swift */,
@@ -154,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF9BBF531D1A38B800D64C00 /* strip-frameworks.sh in Resources */,
 				CFFADA201CCE3F5400A84153 /* Deesa.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

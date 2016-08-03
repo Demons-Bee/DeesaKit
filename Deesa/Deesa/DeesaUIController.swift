@@ -13,16 +13,37 @@ public class DeesaUIController: DeesaController, UIWebViewDelegate {
 
   public private(set) var webView: UIWebView!
   
-  public override func loadView() {
-    super.loadView()
-    webView = UIWebView(frame: self.view.bounds)
-    configForWebView(webView)
-    view = webView
-  }
-  
   public override func viewDidLoad() {
     super.viewDidLoad()
+    webView = UIWebView()
+    view.addSubview(webView)
+    view.sendSubviewToBack(webView)
+    webView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[web]-0-|", options: [], metrics: nil, views: ["web":webView]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[web]-0-|", options: [], metrics: nil, views: ["web":webView]))
+    configForWebView(webView)
     startLoad()
+  }
+  
+  public override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    
+    NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "WebKitCacheModelPreferenceKey")
+    NSUserDefaults.standardUserDefaults().synchronize()
+    
+    guard let navi = navigationController
+      where !navi.viewControllers.isEmpty
+        && webView != nil else {
+      return
+    }
+    
+    if webView.superview != nil {
+      webView.removeFromSuperview()
+    }
+    webView.loadHTMLString("", baseURL: nil)
+    webView.stopLoading()
+    webView.delegate = nil
+    webView = nil
   }
   
   /** override this method must call super */

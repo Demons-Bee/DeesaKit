@@ -18,6 +18,24 @@ func parse(json: AnyObject?) -> AnyObject? {
   guard let result = try? NSJSONSerialization.JSONObjectWithData(jsonData, options: []) else {
     return nil
   }
+  // TODO: 以下代码还需优化，需解决非纯JSON字符串的情况
+  if let dic = result as? [NSObject:AnyObject] {
+    var resDic = [NSObject:AnyObject]()
+    for (k,v) in dic {
+      resDic[k] = parse(v)
+    }
+    if !resDic.isEmpty {
+      return resDic
+    }
+  }
+  if let res = result as? [AnyObject] {
+    let resArr = res.flatMap {
+      parse($0)
+    }
+    if !resArr.isEmpty {
+      return resArr
+    }
+  }
   return result
 }
 
