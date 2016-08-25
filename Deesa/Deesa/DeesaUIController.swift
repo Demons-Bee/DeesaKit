@@ -10,7 +10,7 @@ import UIKit
 import JavaScriptCore
 
 public class DeesaUIController: DeesaController, UIWebViewDelegate {
-
+  
   public private(set) var webView: UIWebView!
   
   public override func viewDidLoad() {
@@ -34,7 +34,7 @@ public class DeesaUIController: DeesaController, UIWebViewDelegate {
     guard let navi = navigationController
       where !navi.viewControllers.isEmpty
         && webView != nil else {
-      return
+          return
     }
     
     if webView.superview != nil {
@@ -66,7 +66,7 @@ public class DeesaUIController: DeesaController, UIWebViewDelegate {
     configRequest(request)
     webView.loadRequest(request)
   }
-
+  
   /** override this method must call super */
   public func webViewDidFinishLoad(webView: UIWebView) {
     guard let context = webView.valueForKeyPath("documentView.webView.mainFrame.javaScriptContext") as? JSContext else {return}

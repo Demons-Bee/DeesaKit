@@ -32,3 +32,14 @@ DeesaExec = function (onSuccess, onError, service, action, args) {
     Deesa.postMessage({className: service, funcName: action, data:args, callbackId: callbackId});
   }
 };
+
+// 添加AppReady事件
+DeesaDispathReady = function() {
+  setTimeout(function(){
+    var event = document.createEvent('Events');
+    event.initEvent('AppReady', false, false);
+    document.dispatchEvent(event);
+  },200);
+};
+
+DeesaDispathReady();

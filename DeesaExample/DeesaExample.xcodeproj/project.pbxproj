@@ -18,6 +18,8 @@
 		CF85CBC61C465F6C00B52943 /* AppPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF85CBC51C465F6C00B52943 /* AppPlugin.swift */; };
 		CF85CC881C479D8F00B52943 /* app_plugin.js in Resources */ = {isa = PBXBuildFile; fileRef = CF85CC871C479D8E00B52943 /* app_plugin.js */; };
 		CF85CC941C48F08800B52943 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = CF85CC931C48F08800B52943 /* test.html */; };
+		CFB5A8541D6EC98E003C8A2C /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = CFB5A8531D6EC98E003C8A2C /* app.js */; };
+		CFB5A8571D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5A8561D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift */; };
 		CFBD773C1C4DD6F1005BC1B0 /* Deesa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */; };
 		CFBD773D1C4DD6F1005BC1B0 /* Deesa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		CF85CBC51C465F6C00B52943 /* AppPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPlugin.swift; sourceTree = "<group>"; };
 		CF85CC871C479D8E00B52943 /* app_plugin.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app_plugin.js; sourceTree = "<group>"; };
 		CF85CC931C48F08800B52943 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		CFB5A8531D6EC98E003C8A2C /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
+		CFB5A8561D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceRemoteJSProtocol.swift; sourceTree = "<group>"; };
 		CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Deesa.framework; path = "/Users/Dahan/Library/Developer/Xcode/DerivedData/DeesaExample-dyvfsshwhxvbyzgifftmttlrajcp/Build/Products/Debug-iphoneos/Deesa.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +89,7 @@
 		CF85CB9C1C46572700B52943 /* DeesaExample */ = {
 			isa = PBXGroup;
 			children = (
+				CFB5A8561D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift */,
 				CF85CC931C48F08800B52943 /* test.html */,
 				CF85CB9D1C46572700B52943 /* AppDelegate.swift */,
 				CF85CB9F1C46572700B52943 /* ViewController.swift */,
@@ -97,6 +102,7 @@
 				CF85CC871C479D8E00B52943 /* app_plugin.js */,
 				CF2A63BF1C4C845A002F4D0C /* console_plugin.js */,
 				CF2A63BD1C4C7EBE002F4D0C /* UserPlugins.plist */,
+				CFB5A8531D6EC98E003C8A2C /* app.js */,
 			);
 			path = DeesaExample;
 			sourceTree = "<group>";
@@ -162,6 +168,7 @@
 			files = (
 				CF85CBA81C46572700B52943 /* LaunchScreen.storyboard in Resources */,
 				CF85CBA51C46572700B52943 /* Assets.xcassets in Resources */,
+				CFB5A8541D6EC98E003C8A2C /* app.js in Resources */,
 				CF85CC941C48F08800B52943 /* test.html in Resources */,
 				CF85CC881C479D8F00B52943 /* app_plugin.js in Resources */,
 				CF2A63BE1C4C7EBE002F4D0C /* UserPlugins.plist in Resources */,
@@ -177,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFB5A8571D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift in Sources */,
 				CF85CBA01C46572700B52943 /* ViewController.swift in Sources */,
 				CF85CBC21C46596D00B52943 /* ConsolePlugin.swift in Sources */,
 				CF85CB9E1C46572700B52943 /* AppDelegate.swift in Sources */,
