@@ -11,7 +11,7 @@ import JavaScriptCore
 
 @objc
 protocol MessageHandlerExport: JSExport {
-  func postMessage(args: Dictionary<NSObject,AnyObject>)
+  func postMessage(_ args: Dictionary<AnyHashable,AnyObject>)
 }
 
 @objc
@@ -27,7 +27,7 @@ class DeesaMessageHandler: NSObject, MessageHandlerExport {
     self.controller = controller
   }
   
-  func postMessage(dic: Dictionary<NSObject,AnyObject>) {
+  func postMessage(_ dic: Dictionary<AnyHashable,AnyObject>) {
     let actor = DeesaActor(stage: dic)
     actor.controller = controller
     actor.webView = webView

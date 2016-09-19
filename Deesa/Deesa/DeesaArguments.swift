@@ -8,19 +8,19 @@
 
 import UIKit
 
-public typealias DeesaDic = Dictionary<NSObject,AnyObject>
+public typealias DeesaDic = Dictionary<AnyHashable,AnyObject>
 public typealias DeesaArr = Array<AnyObject>
 
-public class DeesaArguments: NSObject {
+open class DeesaArguments: NSObject {
 
-  public subscript(key: String) -> AnyObject? {
+  open subscript(key: String) -> AnyObject? {
     get {
       guard let dict = dictionaryValue else { return nil }
       return dict[key]
     }
   }
   
-  public subscript(index: Int) -> AnyObject? {
+  open subscript(index: Int) -> AnyObject? {
     get {
       guard let arr = arrayValue else { return nil }
       if index > arr.count { return nil }
@@ -28,16 +28,16 @@ public class DeesaArguments: NSObject {
     }
   }
   
-  private var data: AnyObject?
+  fileprivate var data: AnyObject?
   
-  public override var description: String {
+  open override var description: String {
     guard let data = data else {
       return ""
     }
     return data.description
   }
   
-  public var dictionaryValue: DeesaDic? {
+  open var dictionaryValue: DeesaDic? {
     if let res = data as? DeesaDic {
       return res
     }
@@ -47,7 +47,7 @@ public class DeesaArguments: NSObject {
     return nil
   }
   
-  public var arrayValue: DeesaArr? {
+  open var arrayValue: DeesaArr? {
     if let res = data as? DeesaArr {
       return res
     }
@@ -57,14 +57,14 @@ public class DeesaArguments: NSObject {
     return nil
   }
   
-  public var stringValue: String? {
+  open var stringValue: String? {
     guard let res = data as? String else {
       return nil
     }
     return res
   }
   
-  public var numberValue: NSNumber? {
+  open var numberValue: NSNumber? {
     guard let res = data as? NSNumber else {
       return nil
     }

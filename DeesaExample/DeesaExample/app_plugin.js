@@ -1,6 +1,6 @@
 App = {
   testCallback: function(successCallback, errorCallback){
-    DeesaExec(successCallback, errorCallback, 'AppPlugin', 'testCallback', {});
+    DeesaExec(successCallback, errorCallback, 'AppPlugin', 'testCallback', '');
   },
   
   alert: function(args){

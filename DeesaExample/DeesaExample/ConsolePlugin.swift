@@ -10,7 +10,7 @@ import Deesa
 
 class ConsolePlugin: DeesaPlugin {
   
-  func log(args: DeesaArguments) {
+  func log(_ args: DeesaArguments) {
     //    print("______Deesa log begin______\n")
     //    if let dic = args.dictionaryValue {
     //      print(dic)
@@ -28,7 +28,7 @@ class ConsolePlugin: DeesaPlugin {
     //      print("下标语法取第0个元素值为: \(args[0])")
     //    }
     //    print("\n______Deesa log ended______")
-//    let a = ((args["key1"] as! [NSObject:AnyObject])["bbb"] as! [AnyObject])[1]
+//    let a = ((args["key1"] as! [AnyHashable:AnyObject])["bbb"] as! [AnyObject])[1]
 //    let b = args["key"] as! String
 //    print(b)
 //    print(a)

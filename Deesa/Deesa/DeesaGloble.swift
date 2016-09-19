@@ -10,22 +10,22 @@ import Foundation
 import WebKit
 import JavaScriptCore
 
-func parse(json: AnyObject?) -> AnyObject? {
+func parse(_ json: AnyObject?) -> AnyObject? {
   guard let string = json as? String else { return nil }
-  guard let jsonData = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) else {
+  guard let jsonData = string.data(using: String.Encoding.utf8, allowLossyConversion: false) else {
     return nil
   }
-  guard let result = try? NSJSONSerialization.JSONObjectWithData(jsonData, options: []) else {
+  guard let result = try? JSONSerialization.jsonObject(with: jsonData, options: []) else {
     return nil
   }
   // TODO: 以下代码还需优化，需解决非纯JSON字符串的情况
-  if let dic = result as? [NSObject:AnyObject] {
-    var resDic = [NSObject:AnyObject]()
+  if let dic = result as? [AnyHashable: Any] {
+    var resDic = [AnyHashable: Any]()
     for (k,v) in dic {
-      resDic[k] = parse(v)
+      resDic[k] = parse(v as AnyObject?)
     }
     if !resDic.isEmpty {
-      return resDic
+      return resDic as AnyObject?
     }
   }
   if let res = result as? [AnyObject] {
@@ -33,17 +33,17 @@ func parse(json: AnyObject?) -> AnyObject? {
       parse($0)
     }
     if !resArr.isEmpty {
-      return resArr
+      return resArr as AnyObject?
     }
   }
-  return result
+  return result as AnyObject?
 }
 
-func toJSON(values: AnyObject?) -> String? {
+func toJSON(_ values: AnyObject?) -> String? {
   guard let values = values else { return nil }
   do {
-    let jsonData = try NSJSONSerialization.dataWithJSONObject(values, options: [])
-    if let jsonString = String(data: jsonData, encoding: NSUTF8StringEncoding) {
+    let jsonData = try JSONSerialization.data(withJSONObject: values, options: [])
+    if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
       return jsonString
     }
   } catch let error as NSError {
@@ -53,24 +53,24 @@ func toJSON(values: AnyObject?) -> String? {
   return nil
 }
 
-func registerUserPluginsForWebView(web: UIView, context: JSContext? = nil, bundle: NSBundle = NSBundle.mainBundle()) {
-  guard let pluginsFile = NSBundle.mainBundle().URLForResource("UserPlugins", withExtension: "plist") else {
+func registerUserPluginsForWebView(_ web: UIView, context: JSContext? = nil, bundle: Bundle = Bundle.main) {
+  guard let pluginsFile = Bundle.main.url(forResource: "UserPlugins", withExtension: "plist") else {
     debugPrint("UserPlugins.plist must be add to your main bundle! If you have any questions, please check out the demo project")
     return
   }
-  guard let pluginsNames = NSArray(contentsOfURL: pluginsFile) else { return }
+  guard let pluginsNames = NSArray(contentsOf: pluginsFile) else { return }
   for name in pluginsNames as! [String] {
     injectJS(name, forWebView: web, context: context, bundle: bundle)
   }
 }
 
-func injectJS(fileName: String, forWebView web: UIView, context: JSContext? = nil, bundle: NSBundle = NSBundle.mainBundle()) {
-  guard let path = bundle.pathForResource(fileName, ofType: "js") else {
+func injectJS(_ fileName: String, forWebView web: UIView, context: JSContext? = nil, bundle: Bundle = Bundle.main) {
+  guard let path = bundle.path(forResource: fileName, ofType: "js") else {
     debugPrint("Not found \(fileName).js file!")
     return
   }
   do {
-    let js = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+    let js = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
     if web is WKWebView {
       (web as! WKWebView).evaluateJavaScript(js as String, completionHandler: nil)
     } else if web is UIWebView {

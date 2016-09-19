@@ -9,22 +9,22 @@
 import WebKit
 
 public enum PluginResultStatus {
-  case Success
-  case Error
+  case success
+  case error
 }
 
-public class DeesaPlugin: NSObject {
+open class DeesaPlugin: NSObject {
   
-  public var controller: DeesaController!
-  public var webView: UIView!
-  public var callbackId: Int!
+  open var controller: DeesaController!
+  open var webView: UIView!
+  open var callbackId: Int!
     
   public required override init() {}
   
-  public func sendPluginResultWithValues(values: AnyObject, status: PluginResultStatus) {
+  open func sendPluginResultWithValues(_ values: AnyObject, status: PluginResultStatus) {
     var method = "DeesaOnSuccessCallback"
     var args = ""
-    if status == PluginResultStatus.Error {
+    if status == PluginResultStatus.error {
       method = "DeesaOnErrorCallback"
     }
     if values is String {
@@ -35,23 +35,28 @@ public class DeesaPlugin: NSObject {
       args = "'\(des)'"
     }
     
+    if callbackId == nil {
+      debugPrint("callbackId missed!")
+      return
+    }
+    
     // execute javascript on main thread
-    if !NSThread.isMainThread() {
-      performSelectorOnMainThread(#selector(DeesaPlugin.executeJS(_:)), withObject: "\(method)(\(callbackId), \(args))", waitUntilDone: false)
+    if !Thread.isMainThread {
+      performSelector(onMainThread: #selector(DeesaPlugin.executeJS(_:)), with: "\(method)(\(callbackId!), \(args))", waitUntilDone: false)
     } else {
-      executeJS("\(method)(\(callbackId), \(args))")
+      executeJS("\(method)(\(callbackId!), \(args))")
     }
   }
   
   //MARK:/*----------------------------------<excute javascript>---------------------------------------*/
   
-  func executeJS(js: String) {
+  func executeJS(_ js: String) {
     if webView is UIWebView {
-      (webView as! UIWebView).stringByEvaluatingJavaScriptFromString(js)
+      (webView as! UIWebView).stringByEvaluatingJavaScript(from: js)
     } else if webView is WKWebView {
-      (webView as! WKWebView).evaluateJavaScript(js, completionHandler: { (obj: AnyObject?, error: NSError?) -> Void in
+      (webView as! WKWebView).evaluateJavaScript(js, completionHandler: { (obj: Any?, error: Error?) in
         if let e = error {
-          debugPrint("execute js `\(js)`--> error:\(e.debugDescription)")
+          debugPrint("execute js `\(js)`--> error:\(e.localizedDescription)")
         }
       })
     }

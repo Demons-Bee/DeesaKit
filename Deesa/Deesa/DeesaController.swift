@@ -10,25 +10,25 @@ import UIKit
 
 public let DeesaName = "Deesa"
 
-public class DeesaController: UIViewController {
+open class DeesaController: UIViewController {
   
-  public private(set) var url: String!
-  public private(set) var URL: NSURL?
+  open fileprivate(set) var url: String!
+  open fileprivate(set) var URL: Foundation.URL?
   
   public convenience init(url: String) {
-    let theURL = NSURL(string: url)
+    let theURL = Foundation.URL(string: url)
     self.init(URL: theURL)
     self.url = url
     self.URL = theURL
   }
   
-  public convenience init(URL: NSURL?) {
+  public convenience init(URL: Foundation.URL?) {
     self.init(nibName: nil, bundle: nil)
     self.URL = URL
     self.url = URL?.absoluteString
   }
   
-  public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+  public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
   }
   

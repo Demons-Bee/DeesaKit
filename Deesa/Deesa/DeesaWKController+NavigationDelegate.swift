@@ -10,43 +10,43 @@ import WebKit
 
 extension DeesaWKController: WKNavigationDelegate {
   
-  public func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-    decisionHandler(.Allow)
+  public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    decisionHandler(.allow)
   }
 
-  public func webView(webView: WKWebView, decidePolicyForNavigationResponse navigationResponse: WKNavigationResponse, decisionHandler: (WKNavigationResponsePolicy) -> Void) {
-    decisionHandler(.Allow)
+  public func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+    decisionHandler(.allow)
   }
 
-  public func webView(webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+  public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
     
   }
 
-  public func webView(webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+  public func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
     
   }
 
-  public func webView(webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: NSError) {
-    debugPrint(error.debugDescription)
+  public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    debugPrint(error.localizedDescription)
   }
 
-  public func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
+  public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
     
   }
 
-  public func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-    if let theURL = URL where !webView.loading {
+  public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    if let theURL = URL , !webView.isLoading {
       debugPrint("Finish load url: \(theURL)")
     }
   }
 
-  public func webView(webView: WKWebView, didFailNavigation navigation: WKNavigation!, withError error: NSError) {
-    debugPrint(error.debugDescription)
+  public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    debugPrint(error.localizedDescription)
   }
 
-  public func webView(webView: WKWebView, didReceiveAuthenticationChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
-    let cred = NSURLCredential.init(forTrust: challenge.protectionSpace.serverTrust!)
-    completionHandler(.UseCredential, cred)
+  public func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    let cred = URLCredential.init(trust: challenge.protectionSpace.serverTrust!)
+    completionHandler(.useCredential, cred)
   }
   
 }

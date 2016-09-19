@@ -20,18 +20,18 @@
 		CF85CC941C48F08800B52943 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = CF85CC931C48F08800B52943 /* test.html */; };
 		CFB5A8541D6EC98E003C8A2C /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = CFB5A8531D6EC98E003C8A2C /* app.js */; };
 		CFB5A8571D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB5A8561D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift */; };
-		CFBD773C1C4DD6F1005BC1B0 /* Deesa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */; };
-		CFBD773D1C4DD6F1005BC1B0 /* Deesa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFFD57521D8EACAD00F231F5 /* Deesa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFD57511D8EACAD00F231F5 /* Deesa.framework */; };
+		CFFD57531D8EACAD00F231F5 /* Deesa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFFD57511D8EACAD00F231F5 /* Deesa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CF85CBF41C474AA000B52943 /* Embed Frameworks */ = {
+		CFFD57541D8EACAE00F231F5 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CFBD773D1C4DD6F1005BC1B0 /* Deesa.framework in Embed Frameworks */,
+				CFFD57531D8EACAD00F231F5 /* Deesa.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,7 +54,7 @@
 		CF85CC931C48F08800B52943 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		CFB5A8531D6EC98E003C8A2C /* app.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.js; sourceTree = "<group>"; };
 		CFB5A8561D6ED7E7003C8A2C /* ReplaceRemoteJSProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceRemoteJSProtocol.swift; sourceTree = "<group>"; };
-		CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Deesa.framework; path = "/Users/Dahan/Library/Developer/Xcode/DerivedData/DeesaExample-dyvfsshwhxvbyzgifftmttlrajcp/Build/Products/Debug-iphoneos/Deesa.framework"; sourceTree = "<absolute>"; };
+		CFFD57511D8EACAD00F231F5 /* Deesa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Deesa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBD773C1C4DD6F1005BC1B0 /* Deesa.framework in Frameworks */,
+				CFFD57521D8EACAD00F231F5 /* Deesa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +72,7 @@
 		CF85CB911C46572700B52943 = {
 			isa = PBXGroup;
 			children = (
-				CFBD773B1C4DD6F1005BC1B0 /* Deesa.framework */,
+				CFFD57511D8EACAD00F231F5 /* Deesa.framework */,
 				CF85CB9C1C46572700B52943 /* DeesaExample */,
 				CF85CB9B1C46572700B52943 /* Products */,
 			);
@@ -117,7 +117,7 @@
 				CF85CB961C46572700B52943 /* Sources */,
 				CF85CB971C46572700B52943 /* Frameworks */,
 				CF85CB981C46572700B52943 /* Resources */,
-				CF85CBF41C474AA000B52943 /* Embed Frameworks */,
+				CFFD57541D8EACAE00F231F5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,11 +135,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = AppHeader;
 				TargetAttributes = {
 					CF85CB991C46572700B52943 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Q3LTG5X273;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -227,8 +230,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -272,8 +277,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -292,6 +299,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -300,26 +308,34 @@
 		CF85CBAD1C46572700B52943 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q3LTG5X273;
 				INFOPLIST_FILE = DeesaExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dahan.DeesaExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		CF85CBAE1C46572700B52943 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q3LTG5X273;
 				INFOPLIST_FILE = DeesaExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Dahan.DeesaExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

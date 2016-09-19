@@ -8,39 +8,39 @@
 
 import UIKit
 
-class ReplaceRemoteJSProtocol: NSURLProtocol {
+class ReplaceRemoteJSProtocol: URLProtocol {
   
-  override class func canInitWithRequest(request: NSURLRequest) -> Bool {
-    if NSURLProtocol.propertyForKey("ReplaceRemoteJSProtocolHandledKey", inRequest: request) != nil {
+  override class func canInit(with request: URLRequest) -> Bool {
+    if URLProtocol.property(forKey: "ReplaceRemoteJSProtocolHandledKey", in: request) != nil {
       return false
     }
-    if request.URL!.absoluteString.containsString("app.js") { //这里只是做了简单的判断，需要根据实际情况做处理
+    if request.url!.absoluteString.contains("app.js") { //这里只是做了简单的判断，需要根据实际情况做处理
       return true
     }
     return false
   }
   
-  override class func canonicalRequestForRequest(request: NSURLRequest) -> NSURLRequest {
+  override class func canonicalRequest(for request: URLRequest) -> URLRequest {
     return request
   }
   
-  override class func requestIsCacheEquivalent(a: NSURLRequest, toRequest b: NSURLRequest) -> Bool {
-    return super.requestIsCacheEquivalent(a, toRequest: b)
+  override class func requestIsCacheEquivalent(_ a: URLRequest, to b: URLRequest) -> Bool {
+    return super.requestIsCacheEquivalent(a, to: b)
   }
   
   override func startLoading() {
     
-    let newRequest = request.mutableCopy() as! NSMutableURLRequest
-    if let URL = getLocalWebSourcePathWithUrl(newRequest.URL!.absoluteString),
-      let data = NSData(contentsOfURL: URL) {
-      let response = NSURLResponse(URL: newRequest.URL!, MIMEType: "application/javascript", expectedContentLength: data.length, textEncodingName: nil)
-      client?.URLProtocol(self, didReceiveResponse: response, cacheStoragePolicy: .NotAllowed)
-      client?.URLProtocol(self, didLoadData: data)
-      client?.URLProtocolDidFinishLoading(self)
+    let newRequest = (request as NSURLRequest).mutableCopy() as! NSMutableURLRequest
+    if let URL = getLocalWebSourcePathWithUrl(newRequest.url!.absoluteString),
+      let data = try? Data(contentsOf: URL) {
+      let response = URLResponse(url: newRequest.url!, mimeType: "application/javascript", expectedContentLength: data.count, textEncodingName: nil)
+      client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+      client?.urlProtocol(self, didLoad: data)
+      client?.urlProtocolDidFinishLoading(self)
       
-      NSURLProtocol.setProperty(true, forKey: "ReplaceRemoteJSProtocolHandledKey", inRequest: newRequest)
+      URLProtocol.setProperty(true, forKey: "ReplaceRemoteJSProtocolHandledKey", in: newRequest)
     } else {
-      client?.URLProtocol(self, didFailWithError: NSError(domain: "FileNotFound", code: 404, userInfo: nil))
+      client?.urlProtocol(self, didFailWithError: NSError(domain: "FileNotFound", code: 404, userInfo: nil))
     }
   }
   
@@ -48,14 +48,14 @@ class ReplaceRemoteJSProtocol: NSURLProtocol {
     
   }
   
-  private func getLocalWebSourcePathWithUrl(absoluteUrl: String) -> NSURL? {
+  fileprivate func getLocalWebSourcePathWithUrl(_ absoluteUrl: String) -> URL? {
     var targetUrl = absoluteUrl as NSString
-    let location = (absoluteUrl as NSString).rangeOfString("?").location
+    let location = (absoluteUrl as NSString).range(of: "?").location
     if location != NSNotFound {
-      targetUrl = targetUrl.substringToIndex(location)
+      targetUrl = targetUrl.substring(to: location) as NSString
     }
     let localWebSourceFileName = targetUrl.lastPathComponent
-    if let URL = NSBundle.mainBundle().URLForResource(localWebSourceFileName, withExtension: nil) {
+    if let URL = Bundle.main.url(forResource: localWebSourceFileName, withExtension: nil) {
         print("replaced with local resource name = \(localWebSourceFileName), URL = \(URL)")
       return URL
     }

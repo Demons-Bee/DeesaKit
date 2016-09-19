@@ -9,14 +9,14 @@
 import UIKit
 import WebKit
 
-public class DeesaWKController: DeesaController, WKScriptMessageHandler {
+open class DeesaWKController: DeesaController, WKScriptMessageHandler {
 
   /** share cookie in all WKWebView, singleton */
-  public static let pool = WKProcessPool()
+  open static let pool = WKProcessPool()
   
-  public private(set) var webView: WKWebView!
+  open fileprivate(set) var webView: WKWebView!
   
-  public override func loadView() {
+  open override func loadView() {
     super.loadView()
     let config = WKWebViewConfiguration()
     configConfiguration(config)
@@ -30,50 +30,50 @@ public class DeesaWKController: DeesaController, WKScriptMessageHandler {
     view = webView
   }
   
-  public override func viewDidLoad() {
+  open override func viewDidLoad() {
     super.viewDidLoad()
     startLoad()
-    injectJS(DeesaName, forWebView: webView, bundle: NSBundle(forClass: DeesaController.self))
+    injectJS(DeesaName, forWebView: webView, bundle: Bundle(for: DeesaController.self))
     registerUserPluginsForWebView(webView)
   }
   
   /** override this method must call super */
-  public func configForWebView(webView: WKWebView) {
+  open func configForWebView(_ webView: WKWebView) {
     webView.scrollView.delaysContentTouches = false
     webView.navigationDelegate = self
-    webView.UIDelegate = self
+    webView.uiDelegate = self
   }
   
   /** override this method must call super */
-  public func configUserContentController(controller: WKUserContentController) {
-    controller.addScriptMessageHandler(self, name: DeesaName)
+  open func configUserContentController(_ controller: WKUserContentController) {
+    controller.add(self, name: DeesaName)
   }
   
   /** override this method must call super */
-  public func configConfiguration(configuration: WKWebViewConfiguration) {
+  open func configConfiguration(_ configuration: WKWebViewConfiguration) {
     configuration.processPool = DeesaWKController.pool
   }
   
   /** override this method to customizing the request
    DeesaController will call this method before webView start loadRequest */
-  public func configRequest(request: NSMutableURLRequest) {}
+  open func configRequest(_ request: NSMutableURLRequest) {}
   
   func startLoad() {
     guard let theURL = URL else {
       debugPrint("Invalidated URL!")
       return
     }
-    let request = NSMutableURLRequest(URL: theURL)
+    let request = NSMutableURLRequest(url: theURL as URL)
     configRequest(request)
-    webView.loadRequest(request)
+    webView.load(request as URLRequest)
   }
   
   //MARK:/*----------------------------------<WKScriptMessageHandler>---------------------------------------*/
   
   /** override this method must call super */
-  public func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
+  open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     if DeesaName != message.name { return }
-    guard let dic = message.body as? Dictionary<NSObject,AnyObject> else { return }
+    guard let dic = message.body as? Dictionary<AnyHashable,AnyObject> else { return }
     let actor = DeesaActor(stage: dic)
     actor.controller = self
     actor.webView = webView
