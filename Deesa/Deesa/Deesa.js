@@ -34,7 +34,7 @@ DeesaExec = function (onSuccess, onError, service, action, args) {
 };
 
 // 添加AppReady事件
-DeesaDispathReady = function() {
+DeesaDispatchReady = function() {
   setTimeout(function(){
     var event = document.createEvent('Events');
     event.initEvent('AppReady', false, false);
@@ -42,4 +42,4 @@ DeesaDispathReady = function() {
   },200);
 };
 
-DeesaDispathReady();
+DeesaDispatchReady();
