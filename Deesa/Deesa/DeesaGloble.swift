@@ -10,9 +10,9 @@ import Foundation
 import WebKit
 import JavaScriptCore
 
-func parse(_ json: AnyObject?) -> AnyObject? {
+func parse(_ json: Any?) -> Any? {
   guard let string = json as? String else { return nil }
-  guard let jsonData = string.data(using: String.Encoding.utf8, allowLossyConversion: false) else {
+  guard let jsonData = string.data(using: .utf8, allowLossyConversion: false) else {
     return nil
   }
   guard let result = try? JSONSerialization.jsonObject(with: jsonData, options: []) else {
@@ -22,10 +22,10 @@ func parse(_ json: AnyObject?) -> AnyObject? {
   if let dic = result as? [AnyHashable: Any] {
     var resDic = [AnyHashable: Any]()
     for (k,v) in dic {
-      resDic[k] = parse(v as AnyObject?)
+      resDic[k] = parse(v)
     }
     if !resDic.isEmpty {
-      return resDic as AnyObject?
+      return resDic
     }
   }
   if let res = result as? [AnyObject] {
@@ -33,13 +33,13 @@ func parse(_ json: AnyObject?) -> AnyObject? {
       parse($0)
     }
     if !resArr.isEmpty {
-      return resArr as AnyObject?
+      return resArr
     }
   }
-  return result as AnyObject?
+  return result
 }
 
-func toJSON(_ values: AnyObject?) -> String? {
+func toJSON(_ values: Any?) -> String? {
   guard let values = values else { return nil }
   do {
     let jsonData = try JSONSerialization.data(withJSONObject: values, options: [])
@@ -74,7 +74,7 @@ func injectJS(_ fileName: String, forWebView web: UIView, context: JSContext? = 
     if web is WKWebView {
       (web as! WKWebView).evaluateJavaScript(js as String, completionHandler: nil)
     } else if web is UIWebView {
-      context?.evaluateScript(js as String)
+      _ = context?.evaluateScript(js as String)
     }
   } catch let error as NSError {
     debugPrint(error.debugDescription)

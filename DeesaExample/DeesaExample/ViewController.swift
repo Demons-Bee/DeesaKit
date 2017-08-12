@@ -20,6 +20,31 @@ class WKController: DeesaWKController {
     
     controller.addUserScript(script)
   }
+  
+//  override func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+//    /** 由于WKWebView不使用URLLoadSystem，所以如果想加入类似AppReady等事件，需要手动注入该功能的js */
+//    let filePath = Bundle.main.path(forResource: "app", ofType: "js")!
+//    let source = try! String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
+////    let script = WKUserScript.init(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: false)
+//    
+////    controller.addUserScript(script)
+//    webView.evaluateJavaScript(source) { (_, e) in
+//      print(e)
+//    }
+//    
+//  }
+  
+//  override func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+//    let filePath = Bundle.main.path(forResource: "app", ofType: "js")!
+//    let source = try! String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
+//    //    let script = WKUserScript.init(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: false)
+//    
+//    //    controller.addUserScript(script)
+//    webView.evaluateJavaScript(source) { (_, e) in
+//      print(e)
+//    }
+//    super.webView(webView, didFinish: navigation)
+//  }
 }
 
 class ViewController: UIViewController {

@@ -11,12 +11,12 @@ import JavaScriptCore
 
 @objc
 protocol MessageHandlerExport: JSExport {
-  func postMessage(_ args: Dictionary<AnyHashable,AnyObject>)
+  func postMessage(_ args: Dictionary<AnyHashable,Any>)
 }
 
 @objc
 class DeesaMessageHandler: NSObject, MessageHandlerExport {
-
+  
   weak var context: JSContext!
   weak var webView: UIWebView!
   weak var controller: DeesaController!
@@ -27,11 +27,13 @@ class DeesaMessageHandler: NSObject, MessageHandlerExport {
     self.controller = controller
   }
   
-  func postMessage(_ dic: Dictionary<AnyHashable,AnyObject>) {
+  func postMessage(_ dic: Dictionary<AnyHashable,Any>) {
     let actor = DeesaActor(stage: dic)
     actor.controller = controller
     actor.webView = webView
-    actor.act()
+    DispatchQueue.main.async {
+      actor.act()
+    }
   }
   
 }

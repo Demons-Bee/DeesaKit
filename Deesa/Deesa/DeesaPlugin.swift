@@ -18,10 +18,10 @@ open class DeesaPlugin: NSObject {
   open var controller: DeesaController!
   open var webView: UIView!
   open var callbackId: Int!
-    
+  
   public required override init() {}
   
-  open func sendPluginResultWithValues(_ values: AnyObject, status: PluginResultStatus) {
+  open func sendPluginResultWithValues(_ values: Any, status: PluginResultStatus) {
     var method = "DeesaOnSuccessCallback"
     var args = ""
     if status == PluginResultStatus.error {
@@ -31,7 +31,7 @@ open class DeesaPlugin: NSObject {
       args = "'\(values as! String)'"
     } else if let json = toJSON(values) {
       args = json
-    } else if let des = values.description {
+    } else if let des = (values as AnyObject).description {
       args = "'\(des)'"
     }
     
@@ -56,7 +56,7 @@ open class DeesaPlugin: NSObject {
     } else if webView is WKWebView {
       (webView as! WKWebView).evaluateJavaScript(js, completionHandler: { (obj: Any?, error: Error?) in
         if let e = error {
-          debugPrint("execute js `\(js)`--> error:\(e.localizedDescription)")
+          debugPrint(":::Deesa:::execute js `\(js)`--> error:\(e.localizedDescription)")
         }
       })
     }

@@ -8,19 +8,19 @@
 
 import UIKit
 
-public typealias DeesaDic = Dictionary<AnyHashable,AnyObject>
-public typealias DeesaArr = Array<AnyObject>
+public typealias DeesaDic = Dictionary<AnyHashable,Any>
+public typealias DeesaArr = Array<Any>
 
 open class DeesaArguments: NSObject {
-
-  open subscript(key: String) -> AnyObject? {
+  
+  open subscript(key: String) -> Any? {
     get {
       guard let dict = dictionaryValue else { return nil }
       return dict[key]
     }
   }
   
-  open subscript(index: Int) -> AnyObject? {
+  open subscript(index: Int) -> Any? {
     get {
       guard let arr = arrayValue else { return nil }
       if index > arr.count { return nil }
@@ -28,13 +28,13 @@ open class DeesaArguments: NSObject {
     }
   }
   
-  fileprivate var data: AnyObject?
+  fileprivate var data: Any?
   
   open override var description: String {
     guard let data = data else {
       return ""
     }
-    return data.description
+    return (data as AnyObject).description
   }
   
   open var dictionaryValue: DeesaDic? {
@@ -71,7 +71,7 @@ open class DeesaArguments: NSObject {
     return res
   }
   
-  convenience init(data: AnyObject?) {
+  convenience init(data: Any?) {
     self.init()
     self.data = data
   }

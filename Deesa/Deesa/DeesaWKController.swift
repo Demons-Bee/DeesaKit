@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 open class DeesaWKController: DeesaController, WKScriptMessageHandler {
-
+  
   /** share cookie in all WKWebView, singleton */
   open static let pool = WKProcessPool()
   
@@ -73,11 +73,11 @@ open class DeesaWKController: DeesaController, WKScriptMessageHandler {
   /** override this method must call super */
   open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
     if DeesaName != message.name { return }
-    guard let dic = message.body as? Dictionary<AnyHashable,AnyObject> else { return }
+    guard let dic = message.body as? Dictionary<AnyHashable,Any> else { return }
     let actor = DeesaActor(stage: dic)
     actor.controller = self
     actor.webView = webView
     actor.act()
   }
-
+  
 }

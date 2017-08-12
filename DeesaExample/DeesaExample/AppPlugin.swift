@@ -24,5 +24,5 @@ class AppPlugin: DeesaPlugin {
   func testCommand(_ args: DeesaArguments) {
     sendPluginResultWithValues("错误回调,传入的参数为 `\(args.description)`" as AnyObject, status: PluginResultStatus.error)
   }
-  
+
 }
