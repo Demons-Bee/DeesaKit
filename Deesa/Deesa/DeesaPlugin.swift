@@ -50,7 +50,7 @@ open class DeesaPlugin: NSObject {
   
   //MARK:/*----------------------------------<excute javascript>---------------------------------------*/
   
-  func executeJS(_ js: String) {
+  @objc func executeJS(_ js: String) {
     if webView is UIWebView {
       (webView as! UIWebView).stringByEvaluatingJavaScript(from: js)
     } else if webView is WKWebView {

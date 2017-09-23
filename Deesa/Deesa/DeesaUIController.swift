@@ -103,7 +103,7 @@ open class DeesaUIController: DeesaController, UIWebViewDelegate {
     let handler = DeesaMessageHandler(context: context, webView: webView, controller: self)
     context.setObject(handler, forKeyedSubscript: DeesaName as (NSCopying & NSObjectProtocol)!)
     context.exceptionHandler = { (context,exception) in
-      print("exception\(exception)")
+      print("exception\(String(describing: exception))")
     }
     injectJS(DeesaName, forWebView: webView, context: context, bundle: Bundle(for: DeesaController.self))
     registerUserPluginsForWebView(webView, context: context)
