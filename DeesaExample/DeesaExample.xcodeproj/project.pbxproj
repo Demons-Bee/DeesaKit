@@ -140,7 +140,7 @@
 				TargetAttributes = {
 					CF85CB991C46572700B52943 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 95A7GF2XKX;
+						DevelopmentTeam = HG3L6A9QD7;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -324,7 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 95A7GF2XKX;
+				DEVELOPMENT_TEAM = HG3L6A9QD7;
 				INFOPLIST_FILE = DeesaExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -343,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 95A7GF2XKX;
+				DEVELOPMENT_TEAM = HG3L6A9QD7;
 				INFOPLIST_FILE = DeesaExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

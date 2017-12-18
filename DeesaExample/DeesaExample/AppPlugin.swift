@@ -11,18 +11,18 @@ import Deesa
 
 class AppPlugin: DeesaPlugin {
 
-  func alert(_ args: DeesaArguments) {
+  @objc func alert(_ args: DeesaArguments) {
     DispatchQueue.main.async {
       UIAlertView(title: nil, message: args.description, delegate: nil, cancelButtonTitle: "OK").show()
     }
   }
   
-  func testCallback(_ args: DeesaArguments) {
-    sendPluginResultWithValues(["success":"true"] as AnyObject, status: PluginResultStatus.success)
+  @objc func testCallback(_ args: DeesaArguments) {
+    sendPluginResultWithValues(["success":"true"], status: PluginResultStatus.success)
   }
   
-  func testCommand(_ args: DeesaArguments) {
-    sendPluginResultWithValues("错误回调,传入的参数为 `\(args.description)`" as AnyObject, status: PluginResultStatus.error)
+  @objc func testCommand(_ args: DeesaArguments) {
+    sendPluginResultWithValues("错误回调,传入的参数为 `\(args.description)`", status: PluginResultStatus.error)
   }
 
 }

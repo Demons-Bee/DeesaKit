@@ -10,7 +10,7 @@ import Deesa
 
 class ConsolePlugin: DeesaPlugin {
   
-  func log(_ args: DeesaArguments) {
+  @objc func log(_ args: DeesaArguments) {
     //    print("______Deesa log begin______\n")
     //    if let dic = args.dictionaryValue {
     //      print(dic)
